@@ -1,0 +1,189 @@
+
+<div class="nav">
+    <span>
+        <a href="#/polls">polls</a>
+    </span>
+    <span>
+        <a class="current">about</a>
+    </span>
+</div>
+
+<div class="about">
+    <h1 class="about">About page</h1>
+    <p class="about">
+        Made for SENG365 by Thomas Eggleston, 5 June 2015.
+    </p>
+    <h2 class="about">
+        Defective functionality
+    </h2>
+    <p class="about">
+        There are no known bugs but there may be some cases where unintended
+        results happen. One such case occurs when any of the fields for a poll
+        are too long to display; some of the value is cut off, and there have
+        been no restrictions put in place to prevent such things from happening.
+    </p>
+    <h2 class="about">
+        Code/Data design
+    </h2>
+    <p class="about">
+        The data for the web site is stored in a database containing 3 tables.
+    </p>
+    <ul class="about">
+        <li class="about">Polls: which stores the title and question.</li>
+        <li class="about">Answers: which stores the answer, answer number and a foreign key
+        referencing the poll it belongs to.</li>
+        <li class="about">Votes: which stores the answer number, IP address and a foreign key
+        referencing which poll it is for.</li>
+    </ul>
+    <p class="about">
+        The pair of columns (PollID, AnswerNumber) are used to reference
+        a particular vote for an answer. This is used to count all the votes
+        for each answer given a poll id. All tables contain an auto-incrementing
+        integer for id.
+    </p>
+    <p class="about">
+        The front end of the site contains a master view: master.php, several
+        partial html files and two javascript files: app.js and controllers.js.
+    </p>
+    <p class="about">
+        The master view contains the main header for the web site, and uses
+        ng-view to load partial html files, which define how a section of the
+        page should look. It is loaded by polls.php, which is the default
+        controller CodeIgniter routes to.
+    </p>
+    <p class="about">
+        The app.js file defines the angular application, as well
+        as the routing between the partial html files and the controller to use.
+    </p>
+    <p class="about">
+        The controllers.js file handles the view logic, such as what to do
+        when a button/link is clicked. It also makes AJAX requests to the
+        web services provided by the website to gather the information to
+        display to the user.
+    </p>
+    <p class="about">
+        The service part of the site uses a controller: services.php and two
+        models: poll.php and vote.php.
+    </p>
+    <p class="about">
+        The services.php controller handles AJAX requests to siteurl/services.
+        It determines its response by checking the parameters given, and the
+        type of http method used. There are two functions polls() and votes()
+        which do this processing, before calling a helper funtion which accesses
+        one of the models in order to retrieve data from or modify the database.
+    </p>
+    <p class="about">
+        The models directly interact with the database using CodeIgniter's
+        Active Record functions.
+    </p>
+    <h2 class="about">
+        Key design decisions
+    </h2>
+    <p class="about">
+        There are hyperlinks on the poll and voting pages which allow a user
+        to assume the roll of being an administrator, as well as switching
+        back to a normal user.
+    </p>
+    <p class="about">
+        The design of the database and queries took much time and experimentation
+        to get right, but it allowed more simplicity amongst the controller
+        files.
+    </p>
+    <p class="about">
+        The separation of the poll.php and vote.php perhaps may have been
+        unnecessary but it simplified the logic within the higher layer
+        functions located in the services.php controller.
+    </p>
+    <p class="about">
+        Some of the functionality, particularly the controllers.js, contains
+        repetition which could have been reduced possibly by the use of
+        inheritance. But this seemed a little too complex and the easier option
+        of separating functionality was employed.
+    </p>
+    <h2 class="about">
+        Acknowledgements
+    </h2>
+    <p class="about">
+        Most of the ideas for the completion of this assignment came from the
+        following resources:
+    </p>
+    <ul class="about">
+        <li class="about">The skeleton view app made by Richard Lobb</li>
+        <li class="about">For CodeIgniter database functionality:
+            <a href="https://ellislab.com/codeigniter/user-guide/database/">
+                https://ellislab.com/codeigniter/user-guide/database/</a>
+        </li>
+        <li class="about">For angular functionality:
+            <a href="https://docs.angularjs.org/api">
+                https://docs.angularjs.org/api</a>
+        </li>
+        <li class="about">For css:
+            <a href="http://www.w3schools.com/css/"></a>
+            http://www.w3schools.com/css/</li>
+    </ul>
+    <p class="about">
+        The following were used to solve small problems which were causing
+        much grief:
+    </p>
+    <ul class="about">
+        <li class="about">
+            <a href="http://stackoverflow.com/questions/14971907/count-rows-of-right-table-when-joinning-two-tables-using-sql-query">
+                This</a> was used for inspiration to solve the issue of counting all
+        votes for a poll, while including zeros for answers which had not
+        received any votes (therefore no vote row to count).
+        </li>
+        <li class="about">
+            <a href="http://stackoverflow.com/questions/19254029/angularjs-http-post-does-not-send-data">
+                This</a> was used to solve a problem where the post data
+        being sent to the model.php was null
+        </li>
+        <li class="about">
+            <a href="http://www.creativedev.in/2012/11/get-ip-address-in-codeigniter/">
+                This
+            </a> was used to find the IP address of the machine submitting a vote.
+        </li>
+        <li class="about">
+            <a href="http://stackoverflow.com/questions/14807258/access-index-of-the-parent-ng-repeat-from-child-ng-repeat">
+                This
+            </a> was used to help figure out how to display the radio buttons.
+        </li>
+        <li class="about">
+            <a href="http://stackoverflow.com/questions/11003916/how-do-i-switch-views-in-angularjs-from-a-controller-function">
+                This
+            </a> was used to find the partial url, from within a controller.
+        </li>
+    </ul>
+    <h2 class="about">
+        Extra features
+    </h2>
+    <p class="about">
+        The ability to create, edit and delete polls was included.
+    </p>
+    <p class="about">
+        Creating and editing polls both use the same partial url and controller.
+        A variable is set depending on the url, which represents what the
+        controller is being used for. An ng-show is used to hide the adding and
+        removing of answers when a poll is being edited. This is because when
+        a put request containing a current poll is sent; only the title and
+        question are sent.
+    </p>
+    <h2 class="about">
+        Personal perspective
+    </h2>
+    <p class="about">
+        Overall I am quite pleased with how the web site functions. It appears
+        to meet the assignment specifications as well as including the extra 3
+        web services. It also seems to work using the csse-studweb3 server,
+        which is a relief as almost all of the design, coding and testing was
+        done on a private machine using localhost.
+    </p>
+    <p class="about">
+        However some of the coding style leaves much to be desired and may be
+        slightly messy, including the bloated polls.css file.
+    </p>
+    <p class="about">
+        The layout and styling of the website could be improved, but this is
+        my first attempt using css, and it looks somewhat better than what it
+        did without css.
+    </p>
+</div>

@@ -1,0 +1,29 @@
+
+<div class="nav">
+    <span>
+        <a class="nav" href="#/admin/polls">polls</a> 
+        <a class="nav" href="#/about">about</a>
+    </span>
+</div>
+
+
+<div class="votes">
+    <h2 ng-bind="pollDetails.question"></h2>
+    <ol class="votes">
+        <li class="votes" ng-repeat="vote in votes">
+            <span class="answers" ng-bind="vote.answer"></span> 
+            <span class="votes">
+                <span ng-bind="vote.total"></span> 
+                vote<span ng-if="vote.total !== '1'">s</span>     
+            </span>
+        </li>
+    </ol>
+    <input type="submit" value="Reset" ng-click="deleteVotes()" 
+                                       ng-show="ready">
+</div>
+
+<div class="privileges">
+    <span ng-show="ready">User privileges: 
+        <span><a href="#/polls/{{pollID}}">user</a> | admin</span>
+    </span>
+</div>

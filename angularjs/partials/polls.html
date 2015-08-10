@@ -1,0 +1,26 @@
+<div class="nav">
+    <span>
+        <a class="current">polls</a>
+    </span>
+    <span>
+        <a href="#/about">about</a>
+    </span>
+</div>
+<div class="polls">
+    <p>Please vote in the following polls:</p>
+    <ul>
+        <li class="polls" ng-repeat="poll in polls">
+            <label>
+                <a class="polls" href="#/polls/{{poll.id}}">
+                    <span ng-bind="poll.title"></span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</div>
+
+<div class="privileges" ng-show="ready">
+    <span>User privileges: 
+        <span>user | <a href="#/admin/polls">admin</a></span>
+    </span>
+</div>

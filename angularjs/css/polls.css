@@ -1,0 +1,195 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 26/05/2015, 6:06:36 PM
+    Author     : thomas
+*/
+
+
+div.all {
+    width: 80%;
+    margin-left: 10%;
+}
+
+h1.site_header {
+    color: blue;
+    text-align: center;
+    font-size: 500%;
+    margin-bottom: 0px;
+    background-color: whitesmoke;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    font-size: 120%;
+}
+
+a:visited {
+    color: blue;
+}
+
+div.nav {
+    text-align: center;
+    font-size: 120%;
+    background-color: whitesmoke;
+    text-decoration: underline;
+}
+
+ul {
+    text-align: center;
+}
+
+li.polls {
+    margin-left: 40%;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div.polls {
+    margin-top: 2%;
+    text-align: center;
+    font-size: 150%;
+    background-color: white;
+}
+
+
+
+a.current {
+    color: black;
+}
+
+div.answers, div.votes {
+    font-size: 200%;
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 2%;
+}
+
+div.privileges {
+    text-align: center;
+    font-size: 120%;
+    background-color: whitesmoke;
+}
+
+input[type='submit'] {
+    font-size: 125%;
+    margin-left: 27%;
+}
+
+input[type='radio'] {
+    float: left;
+    width: 10%;
+}
+
+ol.votes, ol.answers {
+    width: 80%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 8.5%;
+    list-style-type: none;
+    background-color: whitesmoke;
+}
+
+span.answers {
+    margin-left: 0px;
+    color: darkblue;
+}
+
+span.votes {
+    color: red;
+    float: right;
+    margin-right: 40%;
+}
+
+li.answers {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10%;
+}
+
+li.votes {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 19.5%;
+}
+
+div.about {
+    margin-right: 20%;
+}
+
+li.about {
+    text-align: left;
+    margin-left: 30%
+}
+
+h1.about {
+    text-align: center;
+}
+
+h2.about {
+    text-align: left;
+    margin-left: 30%;
+}
+
+p.about {
+    margin-left: 30%;
+}
+
+a.polls {
+    text-decoration: none;
+}
+
+a.change {
+    font-size: 60%;
+    text-decoration: none;
+}
+
+div.pollEdit {
+    text-align: left;
+    font-size: 150%;
+    margin-left: 40%;
+}
+
+input.cTitle {
+    width: 20%;
+}
+
+input.cQuestion {
+    width: 40%;
+}
+
+#deleteAnswer {
+    margin-left: 1%;
+    font-size: 80%;
+    border: none;
+    background-color: white;
+    color: blue;
+}
+
+#addAnswer {
+    margin-left: 1%;
+    font-size: 70%;
+}
+
+div.submitPoll {
+    margin-top: 2%;
+}
+
+input.submitPoll {
+    margin-left: 1%;
+}
+
+#back {
+    font-size: 125%;
+    margin-left: 3%;
+}
+
+li.cAnswers {
+    text-align: left;
+}

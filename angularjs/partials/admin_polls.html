@@ -1,0 +1,40 @@
+<div class="nav">
+    <span>
+        <a class="current">polls</a>
+    </span>
+    <span>
+        <a href="#/about">about</a>
+    </span>
+</div>
+<div class="polls">
+    <p>Please vote in the following polls:</p>
+    <ul>
+        <li class="polls" ng-repeat="poll in polls">
+            <label>
+                <a class="polls" href="#/admin/votes/{{poll.id}}">
+                    <span ng-bind="poll.title"></span>
+                </a>
+            </label>
+            <label>
+                <a class="change" href="#/admin/polls/{{poll.id}}/edit">edit</a>
+            </label>
+            <label>
+                <a class="change" href="#/admin/polls" 
+                   ng-click="deletePoll(poll.id)">delete</a>
+            </label>
+        </li>
+        <li class="polls" ng-show="ready">
+            <label>
+                <a class="polls" href="#/admin/polls/create">
+                    <em>create new poll</em>
+                </a>
+            </label>
+        </li>
+    </ul>
+</div>
+
+<div class="privileges" ng-show="ready">
+    <span>User privileges: 
+        <span><a href="#/polls">user</a> | admin</span>
+    </span>
+</div>

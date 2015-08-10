@@ -1,0 +1,41 @@
+<div class="nav">
+    <span>
+        <a href="#/admin/polls">polls</a>
+    </span>
+    <span>
+        <a href="#/about">about</a>
+    </span>
+</div>
+
+<div class="pollEdit">
+    <h1 ng-show="create">Create poll</h1>
+    <h1 ng-hide="create">Poll <span ng-bind="id"></span></h1>
+    <p>
+        Title
+    </p>
+    <input class="cTitle" type="text" ng-model="poll.title">
+    <p>
+        Question
+    </p>
+    <input class="cQuestion" type="text" ng-model="poll.question">
+    <div ng-show="create">
+        <p>
+            Answers
+        </p>
+        <input class="cAnswer" type="text" ng-model="answer">
+        <input id="addAnswer" type="submit" value="add" ng-click="addAnswer()">
+        <ol class="cAnswers">
+            <li class ="cAnswers" ng-repeat="ans in answers">
+                <span ng-bind="ans"></span>
+                <input id="deleteAnswer" type="submit" value="delete" 
+                                         ng-click="deleteAnswer(ans)">
+            </li>
+        </ol>
+    </div>
+    <div class="submitPoll">
+        <input class="submitPoll" type="submit" value="submit" 
+                                             ng-click="submitPoll()">
+        <a href="#/admin/polls"><button id="back">back</button></a>
+    </div>
+</div>
+    

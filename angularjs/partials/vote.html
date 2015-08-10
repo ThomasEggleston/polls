@@ -1,0 +1,30 @@
+
+<div class="nav">
+    <span>
+        <a class="nav" href="#/polls">polls</a> 
+        <a class="nav" href="#/about">about</a>
+    </span>
+</div>
+
+<div class="answers">
+    <h2 ng-bind="pollDetails.question"></h2>
+    <ol class="answers">
+        <li class="answers" ng-repeat="answer in answers">
+            <span class="answers">
+                <label>
+                    {{answer}}
+                    <input type="radio" value="{{answer}}" 
+                                        ng-model="$parent.choice">
+                </label>
+            </span>
+        </li>
+    </ol>
+    <input type="submit" value="Submit" ng-click="addVote(choice)" 
+                                        ng-show="ready">
+</div>
+
+<div class="privileges">
+    <span ng-show='ready'>User privileges: 
+        <span>user | <a href="#/admin/votes/{{pollID}}">admin</a></span>
+    </span>
+</div>

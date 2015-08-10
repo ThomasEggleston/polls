@@ -1,0 +1,31 @@
+(function () {
+    'use-strict';
+
+    /* App Module */
+    var votingApp = angular.module('votingApp',
+                    ['ngRoute', 'ngResource', 'votingControllers']);
+    
+    votingApp.config(['$routeProvider',
+        function ($routeProvider) {
+            $routeProvider.
+                    when('/polls', {
+                        templateUrl: 'partials/polls.html',
+                        controller: 'pollCtrl'
+                    }).
+                    when('/polls/:id', {
+                        templateUrl: 'partials/poll_id.html',
+                        controller: 'pollDetailsCtrl'
+                    }).
+                    when('/votes', {
+                        templateUrl: 'partials/poll_id.html',
+                        controller: 'votesCtrl'
+                    }).
+                    when('/about', {
+                        templateUrl: 'partials/about.html',
+                        controller: 'aboutCtrl'
+                    }).
+                    otherwise({
+                        redirectTo: '/polls'
+            });
+        }]);
+}())
