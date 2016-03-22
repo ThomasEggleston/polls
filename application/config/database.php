@@ -48,9 +48,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'http://121.72.249.215:3306';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
+$db['default']['hostname'] = 'au-cdbr-azure-southeast-a.cloudapp.net';
+$db['default']['username'] = 'b331deaa3358bf';
+$db['default']['password'] = '2af63e4b';
 $db['default']['database'] = 'polls';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
